@@ -1,7 +1,7 @@
-const move = ['rock', 'paper', 'scissor'];
+const moves = ['rock', 'paper', 'scissor'];
 const computerSelection = getComputerChoice();
 function getComputerChoice() {
-    return move[Math.floor(Math.random()*move.length)];
+    return moves[Math.floor(Math.random()*moves.length)];
 }
 
 function match(playerSelection, computerSelection) {
@@ -36,10 +36,27 @@ function match(playerSelection, computerSelection) {
     }
 }
 
+let you = 0;
+let enemy = 0;
 
+const game = (a) => {
+    let move = window.prompt(`you: ${you} vs enemy: ${enemy}`).toLowerCase();
+    if (a == 0) {return you > enemy ? 'you win' : 'you lose'}
+    else {
+        if (/win/.test(match(move, computerSelection))== true) {
+            you++;
+            console.log('you won', you);
+            return game(a-1);
+        } else if (/tie/.test(match(move, computerSelection))== true) {
+            console.log('it was a tie. no count')
+            return game(a);
+        } else {
+            enemy++;
+            console.log('you loss :(', enemy);
+            return game(a-1);
+        } 
+    }
 
-function game() {
+    };
 
-}
-
-console.log(match('paper', computerSelection));
+console.log(game(5),you,enemy);
