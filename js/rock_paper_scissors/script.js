@@ -1,5 +1,4 @@
 const moves = ['rock', 'paper', 'scissor'];
-const computerSelection = getComputerChoice();
 function getComputerChoice() {
     return moves[Math.floor(Math.random()*moves.length)];
 }
@@ -41,18 +40,19 @@ let enemy = 0;
 
 const game = (a) => {
     let move = window.prompt(`you: ${you} vs enemy: ${enemy}`).toLowerCase();
+    const computerSelection = getComputerChoice();
     if (a == 0) {return you > enemy ? 'you win' : 'you lose'}
     else {
         if (/win/.test(match(move, computerSelection))== true) {
             you++;
-            console.log('you won', you);
+            console.log(`you won! your move was ${move} and enemy move was ${computerSelection}`);
             return game(a-1);
         } else if (/tie/.test(match(move, computerSelection))== true) {
-            console.log('it was a tie. no count')
+            console.log(`it was a tie no count your move was ${move} and enemy move was ${computerSelection}`)
             return game(a);
         } else {
             enemy++;
-            console.log('you loss :(', enemy);
+            console.log(`you lost your move was ${move} and enemy move was ${computerSelection}`);
             return game(a-1);
         } 
     }
