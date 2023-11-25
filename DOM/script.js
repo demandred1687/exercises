@@ -6,6 +6,10 @@ const p2 = document.createElement('p');
 const h3 = document.createElement('h3');
 const subcontent = document.createElement('div');
 const h1 = document.createElement('h1');
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {alert(button.id);});
+});
 content.classList.add('content');
 content.textContent = 'This is the glorious text-content!';
 paragraph.textContent = 'this is a test';
