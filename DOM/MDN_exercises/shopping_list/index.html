@@ -18,7 +18,7 @@
   </head>
   <body>
 
-    <h1>My shopping list</h1>
+    <h1>PhenBoi shopping list</h1>
 
     <div>
       <label for="item">Enter a new item:</label>
@@ -34,18 +34,20 @@
         const btn = document.querySelector('button');
         const ul = document.querySelector('ul');
         const input = document.querySelector('input');
-
-        li.appendChild(btn2);
-        li.appendChild(span);
         btn.addEventListener('click', ()=> {
             const val = input.value;
             input.value = '';
             const li = document.createElement('li');
-            const span = document.createElement('span');
-            const btn2 = document.createElement('button');
-
-        }) 
-        btn.onClick(onClick())
+            const listItem = document.createElement('span');
+            const del = document.createElement('button');
+            listItem.textContent = val;
+            li.appendChild(listItem);
+            del.textContent = 'Delete';
+            li.appendChild(del);
+            ul.appendChild(li);
+            del.addEventListener('click', () => { ul.removeChild(li);});
+            input.focus();
+        });
     </script>
   </body>
 </html>
