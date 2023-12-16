@@ -38,7 +38,7 @@ function match(playerSelection, computerSelection) {
 let you = 0;
 let enemy = 0;
 
-const game = (a) => {
+/*const game = (a) => {
     if (a == 0) {return you > enemy ? 'you win' : 'you lose'}
     else {
         let move = window.prompt(`you: ${you} vs enemy: ${enemy}`).toLowerCase();
@@ -60,3 +60,4 @@ const game = (a) => {
     };
 
 console.log(game(5),you,enemy);
+*/
