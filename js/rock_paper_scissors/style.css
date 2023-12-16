@@ -6,19 +6,38 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-color: burlywood;
+    padding: 0;
+    margin: 0;
+}
+
+.match {
+    display: flex;
+}
+
+.logo {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: lightblue;
+    margin: 0;
+    padding: 0;
+}
+
+.user {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
 }
 
 .header .left {
-    width: 300px;
-    background-color: rgb(119, 119, 119);
-    padding: 15px;
+    padding: 5px 20px;
 }
 
 .header .right {
-    width: 300px;
+    padding: 5px 20px;
     text-align: right;
-    padding: 15px;
-    background-color: rgb(119, 119, 119);
 }
 
 h1 {
@@ -27,4 +46,15 @@ h1 {
     margin: 0;
     padding: 30px;
     border: 0;
+}
+
+.selection {
+    display: flex;
+    background: brown;
+}
+
+.window {
+    display: flex;
+    border-color: black;
+    border: 3px;
 }
