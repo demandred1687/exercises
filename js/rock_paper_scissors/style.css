@@ -33,11 +33,13 @@ body {
 
 .header .left {
     padding: 5px 20px;
+    flex: auto;
 }
 
 .header .right {
     padding: 5px 20px;
     text-align: right;
+    flex: auto;
 }
 
 h1 {
@@ -46,15 +48,37 @@ h1 {
     margin: 0;
     padding: 30px;
     border: 0;
+    background-color: beige;
 }
 
-.selection {
+
+.window-container {
     display: flex;
-    background: brown;
+}
+.window-container div {
+    height: 200px;
+    flex: auto;
+    border: 4px solid indigo;
+    text-align: center;
 }
 
-.window {
+.window-container .window2 {
     display: flex;
-    border-color: black;
-    border: 3px;
+    flex: 2 1 auto;
 }
+
+.selections {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 0;
+    border: 0;
+}
+
+ul button {
+    width: 100px;
+    padding: 0;
+    margin: 0;
+}
+
