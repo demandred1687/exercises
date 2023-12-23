@@ -14,40 +14,66 @@ rock.addEventListener('click', (e) => {return match('rock', getComputerChoice())
 paper.addEventListener('click', (e) => {return match('paper', getComputerChoice())});
 scissor.addEventListener('click', (e) => {return match('scissor', getComputerChoice())});
 
+let you = 0;
+let enemy = 0;
 function match(playerSelection, computerSelection) {
+    cmp_pts.textContent = enemy;
+    u_pts.textContent = you;
     switch(playerSelection){
     case 'rock':
         if(computerSelection == 'paper') {
-            return banner.textContent = `you lose ${computerSelection} beats ${playerSelection}`;
+            enemy++;
+            cmp_pts.textContent = enemy;
+            banner.textContent = `you lose ${computerSelection} beats ${playerSelection}`;
         } else if(computerSelection == 'rock') {
-            return banner.textContent = `it's a tie!!`;
+            banner.textContent = `it's a tie!!`;
         } else {
-            return banner.textContent = `you win ${playerSelection} beats ${computerSelection}`;
+            you++;
+            u_pts.textContent = you;
+            banner.textContent = `you win ${playerSelection} beats ${computerSelection}`;
         }
-        break
+    break;
     case 'paper':
         if(computerSelection == 'scissor') {
-            return banner.textContent =`you lose ${computerSelection} beats ${playerSelection}`;
+            enemy++;
+            cmp_pts.textContent = enemy;
+            banner.textContent =`you lose ${computerSelection} beats ${playerSelection}`;
         } else if(computerSelection == 'paper') {
-            return `it's a tie!!`
+            banner.textContent = `it's a tie!!`;
         } else {
-            return banner.textContent =`you win ${playerSelection} beats ${computerSelection}`
+            you++;
+            u_pts.textContent = you;
+            banner.textContent =`you win ${playerSelection} beats ${computerSelection}`;
         }
-        break
+    break;
     case 'scissor':
         if(computerSelection == 'rock') {
-            return banner.textContent =`you lose ${computerSelection} beats ${playerSelection}`;
+            enemy++;
+            cmp_pts.textContent = enemy;
+            banner.textContent =`you lose ${computerSelection} beats ${playerSelection}`;
         } else if(computerSelection == 'scissor') {
-            return banner.textContent =`it's a tie!!`
+            banner.textContent =`it's a tie!!`;
         } else {
-            return banner.textContent =`you win ${playerSelection} beats ${computerSelection}`
+            you++;
+            u_pts.textContent = you;
+            banner.textContent =`you win ${playerSelection} beats ${computerSelection}`;
         }
-        break
+    break;
+    }
+    if (you == 5) {
+        banner.textContent = `You are the Winner!!!!`;
+        you = 0;
+        enemy = 0;
+        return;
+    } else if (enemy == 5) {
+        banner.textContent = `L O S E R !!!`;
+        you = 0;
+        enemy = 0;
+        return;
     }
 }
 
-let you = 0;
-let enemy = 0;
+
 
 /*const game = (a) => {
     if (a == 0) {return you > enemy ? 'you win' : 'you lose'}
