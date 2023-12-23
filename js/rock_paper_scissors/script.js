@@ -3,33 +3,44 @@ function getComputerChoice() {
     return moves[Math.floor(Math.random()*moves.length)];
 }
 
+let banner = document.querySelector('#announce');
+let rock = document.querySelector('.r')
+let paper = document.querySelector('.p')
+let scissor = document.querySelector('.s')
+let u_pts = document.querySelector('#u_points')
+let cmp_pts = document.querySelector('#comp_points')
+
+rock.addEventListener('click', (e) => {return match('rock', getComputerChoice())});
+paper.addEventListener('click', (e) => {return match('paper', getComputerChoice())});
+scissor.addEventListener('click', (e) => {return match('scissor', getComputerChoice())});
+
 function match(playerSelection, computerSelection) {
     switch(playerSelection){
     case 'rock':
         if(computerSelection == 'paper') {
-            return `you lose ${computerSelection} beats ${playerSelection}`;
+            return banner.textContent = `you lose ${computerSelection} beats ${playerSelection}`;
         } else if(computerSelection == 'rock') {
-            return `it's a tie!!`
+            return banner.textContent = `it's a tie!!`;
         } else {
-            return `you win ${playerSelection} beats ${computerSelection}`
+            return banner.textContent = `you win ${playerSelection} beats ${computerSelection}`;
         }
         break
     case 'paper':
         if(computerSelection == 'scissor') {
-            return `you lose ${computerSelection} beats ${playerSelection}`;
+            return banner.textContent =`you lose ${computerSelection} beats ${playerSelection}`;
         } else if(computerSelection == 'paper') {
             return `it's a tie!!`
         } else {
-            return `you win ${playerSelection} beats ${computerSelection}`
+            return banner.textContent =`you win ${playerSelection} beats ${computerSelection}`
         }
         break
     case 'scissor':
         if(computerSelection == 'rock') {
-            return `you lose ${computerSelection} beats ${playerSelection}`;
+            return banner.textContent =`you lose ${computerSelection} beats ${playerSelection}`;
         } else if(computerSelection == 'scissor') {
-            return `it's a tie!!`
+            return banner.textContent =`it's a tie!!`
         } else {
-            return `you win ${playerSelection} beats ${computerSelection}`
+            return banner.textContent =`you win ${playerSelection} beats ${computerSelection}`
         }
         break
     }
