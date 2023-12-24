@@ -2,7 +2,11 @@ const moves = ['rock', 'paper', 'scissor'];
 function getComputerChoice() {
     return moves[Math.floor(Math.random()*moves.length)];
 }
+//all add elements for images
+const u_png = document.createElement('img.u_png');
+const e_png = document.createElement('img.e_png');
 
+//all the selectors
 let banner = document.querySelector('#announce');
 let rock = document.querySelector('.r')
 let paper = document.querySelector('.p')
